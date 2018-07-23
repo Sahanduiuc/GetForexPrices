@@ -19,6 +19,14 @@ public final class RecordKeys {
 	public static final String ONEHUNMOVAVG = "open";
 	public static final String TWOHUNMOVAVG = "open";
 	
+	public static final int LOCATIONOFDATE = 0;
+	public static final int LOCATIONOFTIME = 0;
+	public static final int LOCATIONOFOPEN = 0;
+	public static final int LOCATIONOFHIGH = 0;
+	public static final int LOCATIONOFCLOSE = 0;
+	public static final int LOCATIONOFLOW = 0;
+	public static final int LOCATIONOFVOLUME = 0;
+	
 	
 	
 }
