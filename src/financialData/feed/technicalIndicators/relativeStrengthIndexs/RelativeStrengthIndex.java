@@ -1,8 +1,8 @@
-package financialData.technicalIndicators.relativeStrengthIndexs;
+package financialData.feed.technicalIndicators.relativeStrengthIndexs;
 
 import java.math.BigDecimal;
 
-import financialData.technicalIndicators.interfaces.TechnicalIndicator;
+import financialData.feed.technicalIndicators.interfaces.TechnicalIndicator;
 
 class RelativeStrengthIndex implements TechnicalIndicator{
 

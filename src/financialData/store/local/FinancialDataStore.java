@@ -1,4 +1,4 @@
-package financialData.store;
+package financialData.store.local;
 
 public class FinancialDataStore {
 

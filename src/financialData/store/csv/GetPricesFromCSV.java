@@ -1,4 +1,4 @@
-package financialData.feed;
+package financialData.store.csv;
 
 import java.io.BufferedReader;
 import java.io.File;

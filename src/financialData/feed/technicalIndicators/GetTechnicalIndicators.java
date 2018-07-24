@@ -1,5 +1,5 @@
-package financialData.technicalIndicators;
+package financialData.feed.technicalIndicators;
 
 public class GetTechnicalIndicators {
-
+	
 }

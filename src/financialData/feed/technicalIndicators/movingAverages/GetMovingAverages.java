@@ -1,8 +1,8 @@
-package financialData.technicalIndicators.movingAverages;
+package financialData.feed.technicalIndicators.movingAverages;
 
 import java.math.BigDecimal;
 
-import financialData.technicalIndicators.interfaces.TechnicalIndicators;
+import financialData.feed.technicalIndicators.interfaces.TechnicalIndicators;
 
 public class GetMovingAverages implements TechnicalIndicators {
 	@Override

@@ -1,4 +1,4 @@
-package financialData.feed;
+package financialData.store.csv;
 
 import static org.junit.jupiter.api.Assertions.*;
 

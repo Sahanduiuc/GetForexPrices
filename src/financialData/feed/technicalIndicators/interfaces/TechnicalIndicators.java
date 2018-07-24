@@ -1,4 +1,4 @@
-package financialData.technicalIndicators.interfaces;
+package financialData.feed.technicalIndicators.interfaces;
 
 import java.math.BigDecimal;
 

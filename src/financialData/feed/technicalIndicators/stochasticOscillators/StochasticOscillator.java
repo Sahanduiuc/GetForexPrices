@@ -1,8 +1,8 @@
-package financialData.technicalIndicators.stochasticOscillators;
+package financialData.feed.technicalIndicators.stochasticOscillators;
 
 import java.math.BigDecimal;
 
-import financialData.technicalIndicators.interfaces.TechnicalIndicator;
+import financialData.feed.technicalIndicators.interfaces.TechnicalIndicator;
 
 class StochasticOscillator implements TechnicalIndicator {
 
