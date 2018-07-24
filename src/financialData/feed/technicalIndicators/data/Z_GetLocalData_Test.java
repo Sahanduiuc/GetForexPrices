@@ -42,7 +42,7 @@ class Z_GetLocalData_Test {
 		
 		
 		
-		System.out.println("Checking position 1 for dataset 1\n");
+		System.out.println("\nChecking position 1 for dataset 1\n");
 		
 		expectedOutput = new BigDecimal("200");
 		actualOutput = GetLocalData.getValue(dataset1, lowKey, 1);
@@ -66,7 +66,7 @@ class Z_GetLocalData_Test {
 		
 		
 		
-		System.out.println("Checking position 200 for dataset 1\n");
+		System.out.println("\nChecking position 200 for dataset 1\n");
 		
 		expectedOutput = new BigDecimal("1");
 		actualOutput = GetLocalData.getValue(dataset1, lowKey, 200);
@@ -88,5 +88,57 @@ class Z_GetLocalData_Test {
 		assertEquals(expectedOutput, actualOutput);
 		System.out.println("Checked high at position 200");
 		
+		
+		
+		System.out.println("\nAdding new values\n");
+		GetLocalData.update(dataset1, "203", "205", "202", "204");
+		
+		
+		
+		System.out.println("Checking position 0 in dataset1 after update\n");
+		
+		expectedOutput = new BigDecimal("202");
+		actualOutput = GetLocalData.getValue(dataset1, lowKey, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked low at position 0");
+		
+		expectedOutput = new BigDecimal("203");
+		actualOutput = GetLocalData.getValue(dataset1, openKey, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked open at position 0");
+		
+		expectedOutput = new BigDecimal("204");
+		actualOutput = GetLocalData.getValue(dataset1, closeKey, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked close at position 0");
+		
+		expectedOutput = new BigDecimal("205");
+		actualOutput = GetLocalData.getValue(dataset1, highKey, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked high at position 0");
+		
+		
+		
+		System.out.println("\nChecking position 200 for dataset1\n");
+		
+		expectedOutput = new BigDecimal("2");
+		actualOutput = GetLocalData.getValue(dataset1, lowKey, 200);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked low at position 200");
+		
+		expectedOutput = new BigDecimal("3");
+		actualOutput = GetLocalData.getValue(dataset1, openKey, 200);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked open at position 200");
+		
+		expectedOutput = new BigDecimal("4");
+		actualOutput = GetLocalData.getValue(dataset1, closeKey, 200);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked close at position 200");
+		
+		expectedOutput = new BigDecimal("5");
+		actualOutput = GetLocalData.getValue(dataset1, highKey, 200);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Checked high at position 200");
 	}
 }

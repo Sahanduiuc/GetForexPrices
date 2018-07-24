@@ -18,7 +18,6 @@ class LocalDataSet {
 		int temp = currentLocation - location;
 		
 		if( temp < 0 ) {
-			temp++;
 			temp = sizeOfThisSet + temp;
 		}
 		
