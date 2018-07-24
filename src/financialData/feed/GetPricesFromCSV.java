@@ -1,11 +1,11 @@
 package financialData.feed;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -61,11 +61,9 @@ class GetPricesFromCSV {
 	 * @return BufferedReader
 	 */
 	private static BufferedReader getBufferedReader(String fileToRead) throws FileNotFoundException {
-		fileToRead = "\\Resources\\Price_Sets\\" + fileToRead;
-		
-		InputStream in = GetPricesFromCSV.class.getResourceAsStream(fileToRead); 
-		
-		return new BufferedReader( new  InputStreamReader(in) );
+		fileToRead = "Resources\\Price_Sets\\" + fileToRead;
+		File file = new File(fileToRead);
+		return new BufferedReader( new FileReader(file) );
 	}
 
 	/**
@@ -74,41 +72,47 @@ class GetPricesFromCSV {
 	 * @return String[][] returns the parsed ontents of the text file in String[row][column] 
 	 * format.
 	*/
-	@SuppressWarnings("unchecked")
 	private static HashMap <String, ArrayList <String> > setReturnValues(BufferedReader valuesToRead) {
-		ArrayList <String> [] column;
+		HashMap <String, ArrayList <String> > rawValues = setupReturnHashMap();
 		
 		try {
-			// To store the read columns from the data set
-			column = new ArrayList [7]; 
-			
 			String currentLine = null;	
+			
 			while ( (currentLine = valuesToRead.readLine()) != null)
 			{   
 				String[] records = currentLine.split(",");
-				
-				for(int j = 0; j < records.length; j++) {
-					column[j].add(records[j]);
-				}
+
+				rawValues.get(RecordKeys.DATE).add(records[RecordKeys.LOCATIONOFDATE]);
+				rawValues.get(RecordKeys.TIME).add(records[RecordKeys.LOCATIONOFTIME]);
+				rawValues.get(RecordKeys.OPEN).add(records[RecordKeys.LOCATIONOFOPEN]);
+				rawValues.get(RecordKeys.HIGH).add(records[RecordKeys.LOCATIONOFHIGH]);
+				rawValues.get(RecordKeys.LOW).add(records[RecordKeys.LOCATIONOFLOW]);
+				rawValues.get(RecordKeys.CLOSE).add(records[RecordKeys.LOCATIONOFCLOSE]);
+				rawValues.get(RecordKeys.VOLUME).add(records[RecordKeys.LOCATIONOFVOLUME]);
 			}
 			
-			HashMap <String, ArrayList <String> > rawData = new HashMap <String, ArrayList<String>  > ();
-			
-			rawData.put( RecordKeys.DATE, column[RecordKeys.LOCATIONOFDATE] );
-			rawData.put( RecordKeys.TIME, column[RecordKeys.LOCATIONOFTIME] );
-			rawData.put( RecordKeys.OPEN, column[RecordKeys.LOCATIONOFOPEN] );
-			rawData.put( RecordKeys.HIGH, column[RecordKeys.LOCATIONOFHIGH] );
-			rawData.put( RecordKeys.LOW, column[RecordKeys.LOCATIONOFLOW] );
-			rawData.put( RecordKeys.CLOSE, column[RecordKeys.LOCATIONOFCLOSE] );
-			rawData.put( RecordKeys.VOLUME, column[RecordKeys.LOCATIONOFVOLUME] );
-			
-			return rawData;
+
+			return rawValues;
 		}
 		catch(IOException exceptionDetails) {
 			System.out.println("IOException in GetPricesFromCSV.setReturnValues");
 			System.out.println(exceptionDetails);	
 			return null;
 		}		
+	}
+	
+	private static HashMap <String, ArrayList <String> > setupReturnHashMap() {
+		HashMap <String, ArrayList <String> > rawData = new HashMap <String, ArrayList<String>  > ();
+		
+		rawData.put( RecordKeys.DATE, new ArrayList<String>() );
+		rawData.put( RecordKeys.TIME, new ArrayList<String>() );
+		rawData.put( RecordKeys.OPEN, new ArrayList<String>() );
+		rawData.put( RecordKeys.HIGH, new ArrayList<String>() );
+		rawData.put( RecordKeys.LOW, new ArrayList<String>() );
+		rawData.put( RecordKeys.CLOSE, new ArrayList<String>() );
+		rawData.put( RecordKeys.VOLUME, new ArrayList<String>() );
+		
+		return rawData;
 	}
 
 }
