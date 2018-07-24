@@ -1,4 +1,4 @@
-package financialData.feed.technicalIndicators.data;
+package financialData.update.technicalIndicators.data;
 
 public final class Z_SetupLocalDataForText {
 	public static final String DATASET1 = "DATASET1";

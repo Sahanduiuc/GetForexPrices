@@ -1,10 +1,11 @@
-package financialData.feed.technicalIndicators.movingAverages;
+package financialData.update.technicalIndicators.relativeStrengthIndexs;
 
 import java.math.BigDecimal;
 
-import financialData.feed.technicalIndicators.interfaces.TechnicalIndicators;
+import financialData.update.technicalIndicators.interfaces.TechnicalIndicators;
 
-public class GetMovingAverages implements TechnicalIndicators {
+public class GetRelativeStrengthIndexs implements TechnicalIndicators {
+
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub

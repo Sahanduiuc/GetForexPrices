@@ -1,11 +1,10 @@
-package financialData.feed.technicalIndicators.stochasticOscillators;
+package financialData.update.technicalIndicators.movingAverages;
 
 import java.math.BigDecimal;
 
-import financialData.feed.technicalIndicators.interfaces.TechnicalIndicators;
+import financialData.update.technicalIndicators.interfaces.TechnicalIndicators;
 
-public class GetStochasticOscillators implements TechnicalIndicators {
-
+public class GetMovingAverages implements TechnicalIndicators {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub

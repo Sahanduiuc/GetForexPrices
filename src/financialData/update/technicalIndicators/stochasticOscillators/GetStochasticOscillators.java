@@ -1,10 +1,10 @@
-package financialData.feed.technicalIndicators.relativeStrengthIndexs;
+package financialData.update.technicalIndicators.stochasticOscillators;
 
 import java.math.BigDecimal;
 
-import financialData.feed.technicalIndicators.interfaces.TechnicalIndicators;
+import financialData.update.technicalIndicators.interfaces.TechnicalIndicators;
 
-public class GetRelativeStrengthIndexs implements TechnicalIndicators {
+public class GetStochasticOscillators implements TechnicalIndicators {
 
 	@Override
 	public void update() {

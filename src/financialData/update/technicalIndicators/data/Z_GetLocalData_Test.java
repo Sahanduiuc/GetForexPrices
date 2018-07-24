@@ -1,4 +1,4 @@
-package financialData.feed.technicalIndicators.data;
+package financialData.update.technicalIndicators.data;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package financialData.store.database;
+package financialData.hardStore.database;
 
 public class GetPricesFromDatabase {
 

@@ -1,4 +1,4 @@
-package financialData.store.local;
+package financialData.localStore;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
