@@ -69,6 +69,26 @@ class Z_GetFinancialData_Test {
 		assertEquals(expectedOutput, actualOutput);
 		System.out.println("Tested 10 Period Moving Average");
 		
+		expectedOutput = new BigDecimal("0.710952");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWENTYMOVAVG, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 20 Period Moving Average");
+		
+		expectedOutput = new BigDecimal("0.7125524");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.FIFTYMOVAVG, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 50 Period Moving Average");
+		
+		expectedOutput = new BigDecimal("0.7071045");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.ONEHUNMOVAVG, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 100 Period Moving Average");
+		
+		expectedOutput = new BigDecimal("0.7339579");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWOHUNMOVAVG, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 200 Period Moving Average");
+		
 		
 		
 		

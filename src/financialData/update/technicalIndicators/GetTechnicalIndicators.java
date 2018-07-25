@@ -9,7 +9,7 @@ import financialData.update.technicalIndicators.stochasticOscillators.GetStochas
 
 public class GetTechnicalIndicators {
 	private GetMovingAverages movingAverages = new GetMovingAverages();
-	private GetRelativeStrengthIndexs rsis;
+	private GetRelativeStrengthIndexs rsis = new GetRelativeStrengthIndexs();
 	private GetStochasticOscillators stochasticOscillators;
 	
 	private boolean isSetup = false;
@@ -36,7 +36,7 @@ public class GetTechnicalIndicators {
 	
 	private void setup(String key) {
 		movingAverages.setup(key, financialDataKeys.RecordKeys.OPEN);
-		
+		rsis.setup(key, financialDataKeys.RecordKeys.OPEN);
 	}
 
 	public GetMovingAverages getMovingAverages() {

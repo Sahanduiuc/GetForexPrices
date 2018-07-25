@@ -47,6 +47,8 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getMovingAverages().get100Period(),
 					technicalIndicators.getMovingAverages().get200Period(),
 					volume);
+			
+			System.out.println("RSI3 " + technicalIndicators.getRSIs().get3Period());
 		}
 		else {
 			System.out.println(key + " has not been setup");
