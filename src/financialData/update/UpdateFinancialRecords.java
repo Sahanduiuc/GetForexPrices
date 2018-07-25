@@ -20,14 +20,33 @@ public final class UpdateFinancialRecords {
 	}
 	public static void update(String key, String date, String time, 
 			String open, String high, String low, String close, String volume) {
-		update(key, date, time, new BigDecimal(open), new BigDecimal(close), 
+		update(key, date, time, new BigDecimal(open), new BigDecimal(high), 
 				new BigDecimal(low), new BigDecimal(close), new BigDecimal(volume));
 	}
 	
 	public static void update(String key, String date, String time, 
 			BigDecimal open, BigDecimal high, BigDecimal low, BigDecimal close, BigDecimal volume) {
-		if(getTechnicalIndicators.containsKey(key)) {
-			GetFinancialDataSet.update(key, date, time, open, high, low, close);
+		if( getTechnicalIndicators.containsKey(key) ) {
+			GetTechnicalIndicators technicalIndicators = getTechnicalIndicators.get(key); 
+			
+			technicalIndicators.update(key, open, high, low, close);
+			
+			GetFinancialDataSet.update(
+					key, 
+					date, 
+					time, 
+					open, 
+					high, 
+					low, 
+					close,
+					technicalIndicators.getMovingAverages().get3Period(),
+					technicalIndicators.getMovingAverages().get5Period(),
+					technicalIndicators.getMovingAverages().get10Period(),
+					technicalIndicators.getMovingAverages().get20Period(),
+					technicalIndicators.getMovingAverages().get50Period(),
+					technicalIndicators.getMovingAverages().get100Period(),
+					technicalIndicators.getMovingAverages().get200Period(),
+					volume);
 		}
 		else {
 			System.out.println(key + " has not been setup");

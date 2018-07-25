@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface TechnicalIndicators {
 	public void update();
-	public void setup();
+	public void setup(String datasetKey, String attributeKey);
 
 	public BigDecimal get3Period();
 	public BigDecimal get5Period();

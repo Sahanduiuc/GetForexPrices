@@ -54,8 +54,9 @@ public class GetRelativeStrengthIndexs implements TechnicalIndicators {
 		return null;
 	}
 
+
 	@Override
-	public void setup() {
+	public void setup(String datasetKey, String attributeKey) {
 		// TODO Auto-generated method stub
 		
 	}

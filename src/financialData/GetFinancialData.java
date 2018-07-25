@@ -10,7 +10,6 @@ public class GetFinancialData {
 	
 	public static BigDecimal getFinancialRecord(String asset, String timeFrame, String attribute, int timePeriod) {
 		checkIfDatasetNeedsChanging(asset, timeFrame);
-		
 		return currentFinancialDataSet.getRecord(attribute, timePeriod);
 	}
 	
@@ -34,10 +33,16 @@ public class GetFinancialData {
 		return null;
 	}
 	
-	public static String getDate(String asset, String timeFrame, String attribute, int timePeriod) {
+	public static String getDate(String asset, String timeFrame, int timePeriod) {
 		checkIfDatasetNeedsChanging(asset, timeFrame);
 		
-		return null;
+		return currentFinancialDataSet.getDate(timePeriod);
+	}
+	
+	public static String getTime(String asset, String timeFrame, int timePeriod) {
+		checkIfDatasetNeedsChanging(asset, timeFrame);
+		
+		return currentFinancialDataSet.getTime(timePeriod);
 	}
 	
 	public static BigDecimal getTime(String asset, String timeFrame, String date) {

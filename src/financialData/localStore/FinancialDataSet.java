@@ -18,11 +18,11 @@ public class FinancialDataSet {
 	public BigDecimal getRecord( String recordKey, int location ) {
 		return values.get(recordKey).get(location);
 	}
-	public BigDecimal getDate( String recordKey, int location ) {
-		return values.get(recordKey).get(location);
+	public String getDate( int location ) {
+		return dates.get(location);
 	}
-	public BigDecimal getTime( String recordKey, int location ) {
-		return values.get(recordKey).get(location);
+	public String getTime( int location ) {
+		return times.get(location);
 	}
 	public BigDecimal[] getDate( String recordKey, int startlocation, int endLocation ) {
 		return null;
@@ -35,7 +35,10 @@ public class FinancialDataSet {
 	}
 	
 	void addNewRecord( String date, String time, BigDecimal open, BigDecimal high, 
-				BigDecimal low, BigDecimal close ) {
+					   BigDecimal low, BigDecimal close, 
+					   BigDecimal ma3, BigDecimal ma5, BigDecimal ma10, BigDecimal ma20, 
+					   BigDecimal ma50, BigDecimal ma100, BigDecimal ma200,
+					   BigDecimal volume ) {
 		dates.add(date);
 		times.add(time);
 		
@@ -43,8 +46,15 @@ public class FinancialDataSet {
 		values.get(RecordKeys.HIGH).add(high);
 		values.get(RecordKeys.LOW).add(low);
 		values.get(RecordKeys.CLOSE).add(close);
-		values.get(RecordKeys.OPEN).add(open);
+		values.get(RecordKeys.VOLUME).add(volume);
 		
+		values.get(RecordKeys.THREEMOVAVG).add(ma3);
+		values.get(RecordKeys.FIVEMOVAVG).add(ma5);
+		values.get(RecordKeys.TENMOVAVG).add(ma10);
+		values.get(RecordKeys.TWENTYMOVAVG).add(ma20);
+		values.get(RecordKeys.FIFTYMOVAVG).add(ma50);
+		values.get(RecordKeys.ONEHUNMOVAVG).add(ma100);
+		values.get(RecordKeys.TWOHUNMOVAVG).add(ma200);
 	}
 	
 	private void setup() {

@@ -11,13 +11,13 @@ public final class RecordKeys {
 	
 	public static final String VOLUME = "Volume";
 	
-	public static final String THREEMOVAVG = "open";
-	public static final String FIVEMOVAVG = "open";
-	public static final String TENMOVAVG = "open";
-	public static final String TWENTYMOVAVG = "open";
-	public static final String FIFTYMOVAVG = "open";
-	public static final String ONEHUNMOVAVG = "open";
-	public static final String TWOHUNMOVAVG = "open";
+	public static final String THREEMOVAVG = "3 Period MA";
+	public static final String FIVEMOVAVG = "5 Period MA";
+	public static final String TENMOVAVG = "10 Period MA";
+	public static final String TWENTYMOVAVG = "20 Period MA";
+	public static final String FIFTYMOVAVG = "50 Period MA";
+	public static final String ONEHUNMOVAVG = "100 Period MA";
+	public static final String TWOHUNMOVAVG = "200 Period MA";
 	
 	public static final int LOCATIONOFDATE = 0;
 	public static final int LOCATIONOFTIME = 1;
