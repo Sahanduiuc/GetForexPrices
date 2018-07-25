@@ -2,13 +2,16 @@ package financialData;
 
 import java.math.BigDecimal;
 
+import financialData.localStore.FinancialDataSet;
+
 public class GetFinancialData {
-	private static String currentDataSetKey;
+	private static FinancialDataSet currentFinancialDataSet;
+	private static String currentDataSetKey = "";
 	
 	public static BigDecimal getFinancialRecord(String asset, String timeFrame, String attribute, int timePeriod) {
 		checkIfDatasetNeedsChanging(asset, timeFrame);
 		
-		return null;
+		return currentFinancialDataSet.getRecord(attribute, timePeriod);
 	}
 	
 	public static BigDecimal getFinancialRecord(String asset, String timeFrame, String attribute, String date) {
@@ -72,11 +75,9 @@ public class GetFinancialData {
 		String key = asset + "_" + timeFrame;
 		
 		if( !currentDataSetKey.equals(key) ) {
-			changeCurrentDataset();
+			currentFinancialDataSet = SetupFinancialData.getFinancialDataSet(key);
+			currentDataSetKey = key;
 		}
 	}
 	
-	private static void changeCurrentDataset() {
-		
-	}
 }

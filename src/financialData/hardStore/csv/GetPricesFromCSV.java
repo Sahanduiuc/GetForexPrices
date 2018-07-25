@@ -24,7 +24,7 @@ import financialDataKeys.RecordKeys;
  * @link https://www.dukascopy.com/plugins/fxMarketWatch/?historical_data
  */
 
-class GetPricesFromCSV {
+public class GetPricesFromCSV {
 	/**
 	 * <p>Takes a String input which should contain the full name of the asset class to parse. 
 	 * I.e. String fileToRead = "GBP_USD_HOUR" . </p>
@@ -36,7 +36,7 @@ class GetPricesFromCSV {
 	 * @param String
 	 * @return String[][]
 	 */
-	static HashMap <String, ArrayList <String> > getPrices(String fileToRead) {	
+	public static HashMap <String, ArrayList <String> > getPrices(String fileToRead) {	
 		try{
 			BufferedReader valuesToRead = getBufferedReader(fileToRead);
 			return setReturnValues(valuesToRead);

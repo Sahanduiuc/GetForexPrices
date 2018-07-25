@@ -54,4 +54,10 @@ public class GetStochasticOscillators implements TechnicalIndicators {
 		return null;
 	}
 
+	@Override
+	public void setup() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

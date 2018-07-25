@@ -34,7 +34,16 @@ public class FinancialDataSet {
 		return null;
 	}
 	
-	public void addNewRecord() {
+	void addNewRecord( String date, String time, BigDecimal open, BigDecimal high, 
+				BigDecimal low, BigDecimal close ) {
+		dates.add(date);
+		times.add(time);
+		
+		values.get(RecordKeys.OPEN).add(open);
+		values.get(RecordKeys.HIGH).add(high);
+		values.get(RecordKeys.LOW).add(low);
+		values.get(RecordKeys.CLOSE).add(close);
+		values.get(RecordKeys.OPEN).add(open);
 		
 	}
 	
