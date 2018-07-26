@@ -51,6 +51,14 @@ public final class RecordKeys {
 	public static final String ONEHUNSTOCHASTIC = "100 Period Stochastic";
 	public static final String TWOHUNSTOCHASTIC = "200 Period Stochastic";
 	
+	public static final String THREEREGRESSION = "3 Period Regression";
+	public static final String FIVEREGRESSION = "5 Period Regression";
+	public static final String TENREGRESSION = "10 Period Regression";
+	public static final String TWENTYREGRESSION = "20 Period Regression";
+	public static final String FIFTYREGRESSION = "50 Period Regression";
+	public static final String ONEHUNREGRESSION = "100 Period Regression";
+	public static final String TWOHUNREGRESSION = "200 Period Regression";
+	
 	public static final int LOCATIONOFDATE = 0;
 	public static final int LOCATIONOFTIME = 1;
 	public static final int LOCATIONOFOPEN = 2;

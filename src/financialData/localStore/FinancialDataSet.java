@@ -50,6 +50,9 @@ public class FinancialDataSet {
 					   BigDecimal rsi3, BigDecimal rsi5, BigDecimal rsi10,
 					   BigDecimal rsi20, BigDecimal rsi50, BigDecimal rsi100,
 					   BigDecimal rsi200,
+					   BigDecimal rs3, BigDecimal rs5, BigDecimal rs10,
+					   BigDecimal rs20, BigDecimal rs50, BigDecimal rs100,
+					   BigDecimal rs200,
 					   BigDecimal volume ) {
 		dates.add(date);
 		times.add(time);
@@ -100,6 +103,14 @@ public class FinancialDataSet {
 		values.get(RecordKeys.ONEHUNSTOCHASTIC).add(so100);
 		values.get(RecordKeys.TWOHUNSTOCHASTIC).add(so200);
 		
+		values.get(RecordKeys.THREEREGRESSION).add(rs3);
+		values.get(RecordKeys.FIVEREGRESSION).add(rs5);
+		values.get(RecordKeys.TENREGRESSION).add(rs10);
+		values.get(RecordKeys.TWENTYREGRESSION).add(rs20);
+		values.get(RecordKeys.FIFTYREGRESSION).add(rs50);
+		values.get(RecordKeys.ONEHUNREGRESSION).add(rs100);
+		values.get(RecordKeys.TWOHUNREGRESSION).add(rs200);
+		
 	}
 	
 	private void setup() {
@@ -136,6 +147,30 @@ public class FinancialDataSet {
 		values.put( RecordKeys.FIFTYLOW,  new ArrayList <BigDecimal> () );
 		values.put( RecordKeys.ONEHUNLOW,  new ArrayList <BigDecimal> () );
 		values.put( RecordKeys.TWOHUNLOW,  new ArrayList <BigDecimal> () );
+		
+		values.put( RecordKeys.THREERSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIVERSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TENRSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWENTYRSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIFTYRSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.ONEHUNRSI,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWOHUNRSI,  new ArrayList <BigDecimal> () );
+		
+		values.put( RecordKeys.THREESTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIVESTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TENSTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWENTYSTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIFTYSTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.ONEHUNSTOCHASTIC,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWOHUNSTOCHASTIC,  new ArrayList <BigDecimal> () );
+		
+		values.put( RecordKeys.THREEREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIVEREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TENREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWENTYREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.FIFTYREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.ONEHUNREGRESSION,  new ArrayList <BigDecimal> () );
+		values.put( RecordKeys.TWOHUNREGRESSION,  new ArrayList <BigDecimal> () );
 		
 
 	}

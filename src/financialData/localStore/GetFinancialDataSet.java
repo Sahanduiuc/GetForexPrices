@@ -30,6 +30,9 @@ public final class GetFinancialDataSet {
 				   BigDecimal rsi3, BigDecimal rsi5, BigDecimal rsi10,
 				   BigDecimal rsi20, BigDecimal rsi50, BigDecimal rsi100,
 				   BigDecimal rsi200,
+				   BigDecimal rs3, BigDecimal rs5, BigDecimal rs10,
+				   BigDecimal rs20, BigDecimal rs50, BigDecimal rs100,
+				   BigDecimal rs200,
 				   BigDecimal volume ) {
 		if( !containsKey(key) ) {
 			financialDataSets.put(key, new FinancialDataSet() );
@@ -38,12 +41,11 @@ public final class GetFinancialDataSet {
 		financialDataSets.get(key).
 			addNewRecord(date, time, open, high, low, close,
 					     ma3, ma5, ma10, ma20, ma50, ma100, ma200, 
-					     high3, high5, high10, high20, high50, 
-					     high100, high200,
-					     low3, low5, low10, low20, low50, 
-					     low100, low200,
+					     high3, high5, high10, high20, high50, high100, high200,
+					     low3, low5, low10, low20, low50,  low100, low200,
 					     so3, so5, so10, so20, so50, so100, so200,
 					     rsi3, rsi5, rsi10, rsi20, rsi50, rsi100, rsi200,
+					     rs3, rs5, rs10, rs20, rs50, rs100, rs200,
 					     volume);
 		
 	}

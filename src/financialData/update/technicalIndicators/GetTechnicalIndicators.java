@@ -6,9 +6,11 @@ import financialData.update.technicalIndicators.data.GetLocalData;
 import financialData.update.technicalIndicators.highsAndLows.GetHighs;
 import financialData.update.technicalIndicators.highsAndLows.GetLows;
 import financialData.update.technicalIndicators.movingAverages.GetMovingAverages;
+import financialData.update.technicalIndicators.regressionSlopes.GetRegressionSlopes;
 import financialData.update.technicalIndicators.relativeStrengthIndexs.GetRelativeStrengthIndexs;
 import financialData.update.technicalIndicators.stochasticOscillators.GetStochasticOscillators;
 import financialData.update.technicalIndicators.stochasticOscillators.HighAndLowData;
+import keys.RecordKeys;
 
 public class GetTechnicalIndicators {
 	private GetMovingAverages movingAverages = new GetMovingAverages();
@@ -16,6 +18,7 @@ public class GetTechnicalIndicators {
 	private GetStochasticOscillators stochasticOscillators = new GetStochasticOscillators();
 	private GetHighs highs = new GetHighs();
 	private GetLows lows = new GetLows();
+	private GetRegressionSlopes regression = new GetRegressionSlopes();
 	
 	private boolean isSetup = false;
 	
@@ -39,6 +42,7 @@ public class GetTechnicalIndicators {
 			lows.update();
 			setDataForStochastic();
 			stochasticOscillators.update();
+			regression.update();
 		}
 	}
 	
@@ -48,7 +52,8 @@ public class GetTechnicalIndicators {
 		highs.setup(key, keys.RecordKeys.OPEN);
 		lows.setup(key, keys.RecordKeys.OPEN);
 		setDataForStochastic();
-		stochasticOscillators.setup(key, keys.RecordKeys.OPEN);
+		stochasticOscillators.setup(key, keys.RecordKeys.CLOSE);
+		regression.setup(key, RecordKeys.CLOSE);
 	}
 	
 	private void setDataForStochastic() {
@@ -72,5 +77,8 @@ public class GetTechnicalIndicators {
 	}
 	public GetLows getLows() {
 		return lows;
+	}
+	public GetRegressionSlopes getRegressionSlopes() {
+		return regression;
 	}
 }
