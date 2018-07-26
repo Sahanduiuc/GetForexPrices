@@ -3,16 +3,88 @@ package financialData.localStore;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-public final class GetFinancialDataSet {
+/**
+ * The object is the local store for FinancialDataSet. The store comprises of a HashMap.
+ * @author James
+ * @version 1.0
+ * @since 26/07/2018
+ */
+public final class GetFinancialDataSetFromLocalStore {
+	/** Maps a key (i.e. GBP_USD_HOUR) to its FinancialDataSet */
 	private static HashMap <String, FinancialDataSet> financialDataSets = 
-			new HashMap <String, FinancialDataSet> (); 
+			  new HashMap <String, FinancialDataSet> (); 
 	
-	public static FinancialDataSet getFinancialDataSet(String key) {
-		return financialDataSets.get(key);
-	}
+	/**
+	 * Checks whether FinancialDataSet is stored locally.
+	 * @param key
+	 * @return boolean
+	 */
 	public static boolean containsKey(String key) {
 		return financialDataSets.containsKey(key);
 	}
+	
+	/**
+	 * Get a FinancialDataSet
+	 * @param key
+	 * @return FinancialDataSet
+	 */
+	public static FinancialDataSet getFinancialDataSet(String key) {
+		return financialDataSets.get(key);
+	}
+	
+	/**
+	 * Update a FinancialDataSet. If set is not already stored it also creates the set.
+	 * @param key
+	 * @param date
+	 * @param time
+	 * @param open
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param ma3
+	 * @param ma5
+	 * @param ma10
+	 * @param ma20
+	 * @param ma50
+	 * @param ma100
+	 * @param ma200
+	 * @param high3
+	 * @param high5
+	 * @param high10
+	 * @param high20
+	 * @param high50
+	 * @param high100
+	 * @param high200
+	 * @param low3
+	 * @param low5
+	 * @param low10
+	 * @param low20
+	 * @param low50
+	 * @param low100
+	 * @param low200
+	 * @param so3
+	 * @param so5
+	 * @param so10
+	 * @param so20
+	 * @param so50
+	 * @param so100
+	 * @param so200
+	 * @param rsi3
+	 * @param rsi5
+	 * @param rsi10
+	 * @param rsi20
+	 * @param rsi50
+	 * @param rsi100
+	 * @param rsi200
+	 * @param rs3
+	 * @param rs5
+	 * @param rs10
+	 * @param rs20
+	 * @param rs50
+	 * @param rs100
+	 * @param rs200
+	 * @param volume
+	 */
 	public static void update( String key,
 				   String date, String time, BigDecimal open, BigDecimal high, 
 				   BigDecimal low, BigDecimal close, 
@@ -38,8 +110,10 @@ public final class GetFinancialDataSet {
 			financialDataSets.put(key, new FinancialDataSet() );
 		}
 		
-		financialDataSets.get(key).
-			addNewRecord(date, time, open, high, low, close,
+		financialDataSets.
+			get(key).
+				addNewRecord(
+						 date, time, open, high, low, close,
 					     ma3, ma5, ma10, ma20, ma50, ma100, ma200, 
 					     high3, high5, high10, high20, high50, high100, high200,
 					     low3, low5, low10, low20, low50,  low100, low200,
