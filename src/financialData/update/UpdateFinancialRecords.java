@@ -3,7 +3,7 @@ package financialData.update;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-import financialData.localStore.GetFinancialDataSet;
+import financialData.localStore.GetFinancialDataSetFromLocalStore;
 import financialData.update.technicalIndicators.GetTechnicalIndicators;
 
 public final class UpdateFinancialRecords {
@@ -31,7 +31,7 @@ public final class UpdateFinancialRecords {
 			
 			technicalIndicators.update(key, open, high, low, close);
 			
-			GetFinancialDataSet.update(
+			GetFinancialDataSetFromLocalStore.update(
 					key, 
 					date, 
 					time, 
