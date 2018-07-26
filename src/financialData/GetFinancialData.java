@@ -6,7 +6,7 @@ import financialData.feed.FeedRawData;
 import financialData.hardStore.GetDataFromDatabase;
 import financialData.hardStore.csv.GetPricesFromCSV;
 import financialData.localStore.FinancialDataSet;
-import financialData.localStore.GetFinancialDataSet;
+import financialData.localStore.GetFinancialDataSetFromLocalStore;
 
 /**
  * Object to get financial data.
@@ -215,8 +215,8 @@ public class GetFinancialData {
 	 * @return FinancialDataSet
 	 */
 	private static FinancialDataSet getFinancialDataSet(String key) {
-		if( GetFinancialDataSet.containsKey(key) ) {
-			return GetFinancialDataSet.getFinancialDataSet(key);
+		if( GetFinancialDataSetFromLocalStore.containsKey(key) ) {
+			return GetFinancialDataSetFromLocalStore.getFinancialDataSet(key);
 		}
 		else if( GetDataFromDatabase.containsKey(key) ) {
 			
@@ -225,7 +225,7 @@ public class GetFinancialData {
 			FeedRawData feed = new FeedRawData();
 			feed.feedInRawData(key, GetPricesFromCSV.getPrices(key));
 		}
-		return GetFinancialDataSet.getFinancialDataSet(key);
+		return GetFinancialDataSetFromLocalStore.getFinancialDataSet(key);
 	}
 	
 }
