@@ -43,6 +43,14 @@ public final class RecordKeys {
 	public static final String ONEHUNLOW = "100 Period Low";
 	public static final String TWOHUNLOW = "200 Period Low";
 	
+	public static final String THREESTOCHASTIC = "3 Period Stochastic";
+	public static final String FIVESTOCHASTIC = "5 Period Stochastic";
+	public static final String TENSTOCHASTIC = "10 Period Stochastic";
+	public static final String TWENTYSTOCHASTIC = "20 Period Stochastic";
+	public static final String FIFTYSTOCHASTIC = "50 Period Stochastic";
+	public static final String ONEHUNSTOCHASTIC = "100 Period Stochastic";
+	public static final String TWOHUNSTOCHASTIC = "200 Period Stochastic";
+	
 	public static final int LOCATIONOFDATE = 0;
 	public static final int LOCATIONOFTIME = 1;
 	public static final int LOCATIONOFOPEN = 2;
@@ -50,7 +58,4 @@ public final class RecordKeys {
 	public static final int LOCATIONOFLOW = 4;
 	public static final int LOCATIONOFCLOSE = 5;
 	public static final int LOCATIONOFVOLUME = 6;
-	
-	
-	
 }

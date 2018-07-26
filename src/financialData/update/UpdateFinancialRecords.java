@@ -62,7 +62,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getLows().get200Period(),
 					volume);
 			
-			System.out.println("RSI3 " + technicalIndicators.getRSIs().get3Period());
+			System.out.println("RSI3 " + technicalIndicators.getRSIs().get3Period() + " SO3 " + technicalIndicators.getStochasticOscillators().get3Period());
 		}
 		else {
 			System.out.println(key + " has not been setup");

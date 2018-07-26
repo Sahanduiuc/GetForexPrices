@@ -24,6 +24,12 @@ public final class GetFinancialDataSet {
 				   BigDecimal low3, BigDecimal low5, BigDecimal low10,
 				   BigDecimal low20, BigDecimal low50, BigDecimal low100,
 				   BigDecimal low200,
+				   BigDecimal so3, BigDecimal so5, BigDecimal so10,
+				   BigDecimal so20, BigDecimal so50, BigDecimal so100,
+				   BigDecimal so200,
+				   BigDecimal rsi3, BigDecimal rsi5, BigDecimal rsi10,
+				   BigDecimal rsi20, BigDecimal rsi50, BigDecimal rsi100,
+				   BigDecimal rsi200,
 				   BigDecimal volume ) {
 		if( !containsKey(key) ) {
 			financialDataSets.put(key, new FinancialDataSet() );
@@ -36,6 +42,8 @@ public final class GetFinancialDataSet {
 					     high100, high200,
 					     low3, low5, low10, low20, low50, 
 					     low100, low200,
+					     so3, so5, so10, so20, so50, so100, so200,
+					     rsi3, rsi5, rsi10, rsi20, rsi50, rsi100, rsi200,
 					     volume);
 		
 	}

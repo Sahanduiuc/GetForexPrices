@@ -44,6 +44,12 @@ public class FinancialDataSet {
 					   BigDecimal low3, BigDecimal low5, BigDecimal low10,
 					   BigDecimal low20, BigDecimal low50, BigDecimal low100,
 					   BigDecimal low200,
+					   BigDecimal so3, BigDecimal so5, BigDecimal so10,
+					   BigDecimal so20, BigDecimal so50, BigDecimal so100,
+					   BigDecimal so200,
+					   BigDecimal rsi3, BigDecimal rsi5, BigDecimal rsi10,
+					   BigDecimal rsi20, BigDecimal rsi50, BigDecimal rsi100,
+					   BigDecimal rsi200,
 					   BigDecimal volume ) {
 		dates.add(date);
 		times.add(time);
@@ -77,6 +83,23 @@ public class FinancialDataSet {
 		values.get(RecordKeys.FIFTYLOW).add(low50);
 		values.get(RecordKeys.ONEHUNLOW).add(low100);
 		values.get(RecordKeys.TWOHUNLOW).add(low200);
+		
+		values.get(RecordKeys.THREERSI).add(rsi3);
+		values.get(RecordKeys.FIVERSI).add(rsi5);
+		values.get(RecordKeys.TENRSI).add(rsi10);
+		values.get(RecordKeys.TWENTYRSI).add(rsi20);
+		values.get(RecordKeys.FIFTYRSI).add(rsi50);
+		values.get(RecordKeys.ONEHUNRSI).add(rsi100);
+		values.get(RecordKeys.TWOHUNRSI).add(rsi200);
+		
+		values.get(RecordKeys.THREESTOCHASTIC).add(so3);
+		values.get(RecordKeys.FIVESTOCHASTIC).add(so5);
+		values.get(RecordKeys.TENSTOCHASTIC).add(so10);
+		values.get(RecordKeys.TWENTYSTOCHASTIC).add(so20);
+		values.get(RecordKeys.FIFTYSTOCHASTIC).add(so50);
+		values.get(RecordKeys.ONEHUNSTOCHASTIC).add(so100);
+		values.get(RecordKeys.TWOHUNSTOCHASTIC).add(so200);
+		
 	}
 	
 	private void setup() {
