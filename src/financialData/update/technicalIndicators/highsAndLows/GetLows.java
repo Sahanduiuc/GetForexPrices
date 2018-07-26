@@ -14,6 +14,6 @@ public class GetLows extends GetHighs {
 	
 	@Override
 	protected String getAttribute() {
-		return financialDataKeys.RecordKeys.LOW;
+		return keys.RecordKeys.LOW;
 	}
 }

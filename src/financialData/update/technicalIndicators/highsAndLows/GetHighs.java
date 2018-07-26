@@ -14,7 +14,7 @@ public class GetHighs implements TechnicalIndicators {
 		BigDecimal highestNumber = GetLocalData.getValue(datasetKey, getAttribute());
 		int location = 0;
 		
-		int finishingPoint = settings.Settings.LARGESTTECHNICALINDICATOR - 1;
+		int finishingPoint = settings.Settings.LARGESTTECHNICALINDICATOR ;
 		for( int cnt = 1; cnt < finishingPoint; cnt++) {
 			BigDecimal latestValue = GetLocalData.getValue(datasetKey, getAttribute(), cnt);
 			
@@ -65,7 +65,7 @@ public class GetHighs implements TechnicalIndicators {
 	}
 	
 	protected String getAttribute() {
-		return financialDataKeys.RecordKeys.HIGH;
+		return keys.RecordKeys.HIGH;
 	}
 
 	@Override

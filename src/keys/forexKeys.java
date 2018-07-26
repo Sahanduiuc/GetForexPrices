@@ -1,4 +1,4 @@
-package financialDataKeys;
+package keys;
 
 public final class forexKeys {
 

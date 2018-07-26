@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
-import financialDataKeys.RecordKeys;
+import keys.RecordKeys;
 
 class Z_GetPricesFromCSV_Test {
 

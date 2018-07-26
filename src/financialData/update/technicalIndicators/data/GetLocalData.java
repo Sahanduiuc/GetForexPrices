@@ -3,7 +3,7 @@ package financialData.update.technicalIndicators.data;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-import financialDataKeys.RecordKeys;
+import keys.RecordKeys;
 
 public class GetLocalData {
 	private static HashMap <String, HashMap<String, LocalDataSet>> localDataHashmap

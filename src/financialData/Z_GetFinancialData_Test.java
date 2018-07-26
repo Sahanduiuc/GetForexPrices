@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 
-import financialDataKeys.RecordKeys;
+import keys.RecordKeys;
 
 class Z_GetFinancialData_Test {
 	private String asset = "TEST";
@@ -88,6 +88,76 @@ class Z_GetFinancialData_Test {
 		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWOHUNMOVAVG, 0);
 		assertEquals(expectedOutput, actualOutput);
 		System.out.println("Tested 200 Period Moving Average");
+		
+		expectedOutput = new BigDecimal("0.72620");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.THREEHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 3 Period High");
+		
+		expectedOutput = new BigDecimal("0.72620");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.FIVEHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 5 Period High");
+		
+		expectedOutput = new BigDecimal("0.72620");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TENHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 10 Period High");
+		
+		expectedOutput = new BigDecimal("0.72620");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWENTYHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 20 Period High");
+		
+		expectedOutput = new BigDecimal("0.73471");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.FIFTYHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 50 Period High");
+		
+		expectedOutput = new BigDecimal("0.73670");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.ONEHUNHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 100 Period High");
+		
+		expectedOutput = new BigDecimal("0.80022");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWOHUNHIGH, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 200 Period High");
+		
+		expectedOutput = new BigDecimal("0.71355");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.THREELOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 3 Period Low");
+		
+		expectedOutput = new BigDecimal("0.71276");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.FIVELOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 5 Period Low");
+		
+		expectedOutput = new BigDecimal("0.70547");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TENLOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 10 Period Low");
+		
+		expectedOutput = new BigDecimal("0.69516");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWENTYLOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 20 Period Low");
+		
+		expectedOutput = new BigDecimal("0.68715");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.FIFTYLOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 50 Period Low");
+		
+		expectedOutput = new BigDecimal("0.67753");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.ONEHUNLOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 100 Period Low");
+		
+		expectedOutput = new BigDecimal("0.67753");
+		actualOutput = GetFinancialData.getFinancialRecord(asset, timeFrame, RecordKeys.TWOHUNLOW, 0);
+		assertEquals(expectedOutput, actualOutput);
+		System.out.println("Tested 200 Period Low");
 		
 		
 		

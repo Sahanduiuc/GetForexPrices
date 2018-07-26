@@ -17,8 +17,8 @@ public class GetRelativeStrengthIndexs implements TechnicalIndicators {
 		BigDecimal combinedLosses = new BigDecimal(0);
 		
 		for(int j = 0; j < largestMovingAverage; j++) {
-			BigDecimal openValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.OPEN, j);
-			BigDecimal closeValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.CLOSE, j);
+			BigDecimal openValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.OPEN, j);
+			BigDecimal closeValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.CLOSE, j);
 			
 			BigDecimal gain = closeValue.subtract(openValue);
 			

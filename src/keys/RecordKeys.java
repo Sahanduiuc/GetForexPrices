@@ -1,4 +1,4 @@
-package financialDataKeys;
+package keys;
 
 public final class RecordKeys {
 	public static final String DATE = "Date";
@@ -26,6 +26,22 @@ public final class RecordKeys {
 	public static final String FIFTYRSI = "50 Period RSI";
 	public static final String ONEHUNRSI = "100 Period RSI";
 	public static final String TWOHUNRSI = "200 Period RSI";
+	
+	public static final String THREEHIGH = "3 Period High";
+	public static final String FIVEHIGH = "5 Period High";
+	public static final String TENHIGH = "10 Period High";
+	public static final String TWENTYHIGH = "20 Period High";
+	public static final String FIFTYHIGH = "50 Period High";
+	public static final String ONEHUNHIGH = "100 Period High";
+	public static final String TWOHUNHIGH = "200 Period High";
+	
+	public static final String THREELOW = "3 Period Low";
+	public static final String FIVELOW = "5 Period Low";
+	public static final String TENLOW = "10 Period Low";
+	public static final String TWENTYLOW = "20 Period Low";
+	public static final String FIFTYLOW = "50 Period Low";
+	public static final String ONEHUNLOW = "100 Period Low";
+	public static final String TWOHUNLOW = "200 Period Low";
 	
 	public static final int LOCATIONOFDATE = 0;
 	public static final int LOCATIONOFTIME = 1;

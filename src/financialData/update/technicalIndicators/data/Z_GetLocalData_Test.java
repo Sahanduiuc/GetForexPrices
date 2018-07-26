@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 
 class Z_GetLocalData_Test {
 	private String dataset1 = Z_SetupLocalDataForText.DATASET1;
-	private String lowKey = financialDataKeys.RecordKeys.LOW;
-	private String openKey = financialDataKeys.RecordKeys.OPEN;
-	private String closeKey = financialDataKeys.RecordKeys.CLOSE;
-	private String highKey = financialDataKeys.RecordKeys.HIGH;
+	private String lowKey = keys.RecordKeys.LOW;
+	private String openKey = keys.RecordKeys.OPEN;
+	private String closeKey = keys.RecordKeys.CLOSE;
+	private String highKey = keys.RecordKeys.HIGH;
 	
 	private BigDecimal expectedOutput, actualOutput;
 	@Test

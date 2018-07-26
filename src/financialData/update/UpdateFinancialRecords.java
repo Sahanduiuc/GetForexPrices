@@ -46,6 +46,20 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getMovingAverages().get50Period(),
 					technicalIndicators.getMovingAverages().get100Period(),
 					technicalIndicators.getMovingAverages().get200Period(),
+					technicalIndicators.getHighs().get3Period(),
+					technicalIndicators.getHighs().get5Period(),
+					technicalIndicators.getHighs().get10Period(),
+					technicalIndicators.getHighs().get20Period(),
+					technicalIndicators.getHighs().get50Period(),
+					technicalIndicators.getHighs().get100Period(),
+					technicalIndicators.getHighs().get200Period(),
+					technicalIndicators.getLows().get3Period(),
+					technicalIndicators.getLows().get5Period(),
+					technicalIndicators.getLows().get10Period(),
+					technicalIndicators.getLows().get20Period(),
+					technicalIndicators.getLows().get50Period(),
+					technicalIndicators.getLows().get100Period(),
+					technicalIndicators.getLows().get200Period(),
 					volume);
 			
 			System.out.println("RSI3 " + technicalIndicators.getRSIs().get3Period());

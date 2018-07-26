@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import financialData.update.UpdateFinancialRecords;
-import financialDataKeys.RecordKeys;
+import keys.RecordKeys;
 public class FeedRawData {
 	private int sizeOfSetup = settings.Settings.LARGESTTECHNICALINDICATOR - 1;
 	
@@ -30,7 +30,7 @@ public class FeedRawData {
 	}
 	
 	private void feed(String key, HashMap<String, ArrayList<String>> rawData) {
-		int sizeOfSet = rawData.get(financialDataKeys.RecordKeys.OPEN).size();
+		int sizeOfSet = rawData.get(keys.RecordKeys.OPEN).size();
 		for(int j = sizeOfSetup; j < sizeOfSet; j++) {
 			UpdateFinancialRecords.update(
 					key,

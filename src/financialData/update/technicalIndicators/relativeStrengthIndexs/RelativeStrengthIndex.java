@@ -20,8 +20,8 @@ class RelativeStrengthIndex implements TechnicalIndicator{
 
 	@Override
 	public void update() {
-		BigDecimal latestOpenValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.OPEN);
-		BigDecimal latestCloseValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.CLOSE);
+		BigDecimal latestOpenValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.OPEN);
+		BigDecimal latestCloseValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.CLOSE);
 		BigDecimal latestGain = latestCloseValue.subtract(latestOpenValue);
 		
 		if( latestGain.compareTo( BigDecimal.ZERO ) > 0) {
@@ -31,8 +31,8 @@ class RelativeStrengthIndex implements TechnicalIndicator{
 			combinedLosses = combinedLosses.subtract(latestGain);
 		}
 		
-		BigDecimal previousOpenValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.OPEN, sizeOfThisIndicator);
-		BigDecimal previousCloseValue = GetLocalData.getValue(datasetKey, financialDataKeys.RecordKeys.CLOSE, sizeOfThisIndicator);
+		BigDecimal previousOpenValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.OPEN, sizeOfThisIndicator);
+		BigDecimal previousCloseValue = GetLocalData.getValue(datasetKey, keys.RecordKeys.CLOSE, sizeOfThisIndicator);
 		BigDecimal previousGain = previousCloseValue.subtract(previousOpenValue);
 		
 		if( previousGain.compareTo( BigDecimal.ZERO ) > 0) {
