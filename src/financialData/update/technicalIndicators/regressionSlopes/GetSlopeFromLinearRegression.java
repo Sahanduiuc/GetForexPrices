@@ -42,7 +42,6 @@ public class GetSlopeFromLinearRegression {
 	}
 	public static BigDecimal getRegressionSlope(BigDecimal[] yValue) {	
 		regression.clear();
-		
 		regression.addData( getInputLinearRegression( yValue ) );
 	
 		return new BigDecimal(  regression.getSlope(), mc );
