@@ -9,21 +9,15 @@ class Z_Time_Test {
 		System.out.println("Testing time to calcualte technical indicators and "
 				+ "store records in the local store\n");
 		
-	//	testTime(AssetKeys.GBPUSD, AssetKeys.WEEK);
+		testTime(AssetKeys.GBPUSD, AssetKeys.WEEK);
 		testTime(AssetKeys.GBPUSD, AssetKeys.DAY);
-	//	testTime(AssetKeys.GBPUSD, AssetKeys.HOUR);
+		testTime(AssetKeys.GBPUSD, AssetKeys.HOUR);
 		
 		System.out.println("\nTesting time now records are in local store\n");
 		
-	//	testTime(AssetKeys.GBPUSD, AssetKeys.WEEK);
-	//	testTime(AssetKeys.GBPUSD, AssetKeys.DAY);
-	//	testTime(AssetKeys.GBPUSD, AssetKeys.HOUR);
-		printRS(0);
-		printRS(1);
-		printRS(2);
-		printRS(3);
-		printRS(4);
-		printRS(5);
+		testTime(AssetKeys.GBPUSD, AssetKeys.WEEK);
+		testTime(AssetKeys.GBPUSD, AssetKeys.DAY);
+		testTime(AssetKeys.GBPUSD, AssetKeys.HOUR);
 		
 	}
 	
@@ -36,7 +30,7 @@ class Z_Time_Test {
 		
 		System.out.println("Total execution time: " + (endTime - startTime) );
 	}
-	
+	/*
 	private static void printRS(int location) {
 		BigDecimal rs3, rs5, rs10, rs20, rs50, rs100, rs200;
 		
@@ -49,7 +43,7 @@ class Z_Time_Test {
 		rs200 = GetFinancialData.getFinancialRecord(AssetKeys.GBPUSD, AssetKeys.DAY, RecordKeys.TWOHUNREGRESSION, location);
 		
 		System.out.println(rs3 + " " + rs5 + " " + rs10 + " " + rs20 + " " + rs50 + " " + rs100 + " " + rs200);
-	}
+	}*/
 }
 
 /**

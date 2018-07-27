@@ -36,12 +36,10 @@ public class GetSlopeFromLinearRegression {
 	public static BigDecimal getPrediction() {
 		return new BigDecimal( regression.predict( 0.0001 ), mc );
 	}
-	
-	public static void clear() {
-		regression.clear();
-	}
+
 	public static BigDecimal getRegressionSlope(BigDecimal[] yValue) {	
 		regression.clear();
+		
 		regression.addData( getInputLinearRegression( yValue ) );
 	
 		return new BigDecimal(  regression.getSlope(), mc );
@@ -56,10 +54,9 @@ public class GetSlopeFromLinearRegression {
 		for (int j = 0, y = (yValueBigDecimal.length - 1); j < yValueBigDecimal.length; j++, y--) {
 			outputData[j][0] = number.doubleValue();
 			outputData[y][1] = yValueBigDecimal[j].doubleValue();
-			System.out.print(yValueBigDecimal[y] + " ");
 			number = number.add(additionNumber);
 		}
-		System.out.println("");
+
 		return outputData;
 	}
 

@@ -8,9 +8,7 @@ import financialData.update.technicalIndicators.interfaces.TechnicalIndicators;
 
 public class GetRegressionSlopes implements TechnicalIndicators {
 	private RegressionSlope rs3, rs5, rs10, rs20, rs50, rs100, rs200;
-	private ArrayList <BigDecimal> valuesToRegress;
 	private String datasetKey, attributeKey;
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void setup(String datasetKey, String attributeKey) {
@@ -44,43 +42,26 @@ public class GetRegressionSlopes implements TechnicalIndicators {
 				case 199:
 					rs200 = new RegressionSlope( (ArrayList<BigDecimal>) theList.clone() );
 					break;
-			}	
+			}
 		}
-		valuesToRegress = theList;
-		regression3 = addDataAndRegress(0, 3);
+		
 	}
 	
 	@Override
 	public void update() {
-		valuesToRegress.add(GetLocalData.getValue(datasetKey, attributeKey));
-		valuesToRegress.remove(0);
-		
-		regression3 = addDataAndRegress(0, 3);
-		regression5 = addDataAndRegress(3, 5);
-		
-	}
-	BigDecimal regression3, regression5, regression10, regression20, regression50;
-	BigDecimal regression100, regression200;
-	
-	private BigDecimal addDataAndRegress(int startLocation, int endLocation) {
-		int size = endLocation - startLocation;
-		BigDecimal[] dataToAdd = new BigDecimal[size];
-		/*
-		startLocation = ( valuesToRegress.size() - 1 - startLocation );
-		endLocation = ( valuesToRegress.size() - 1 - endLocation );
-		*/
-	//	System.out.println("size: " + size + " start " + startLocation + " end " + endLocation + " valuesSize " + valuesToRegress.size());
-		for(int j = startLocation, cnt = 0; j < endLocation; j++, cnt++) {
-			dataToAdd[cnt] = valuesToRegress.get(j);
-		//	System.out.println(valuesToRegress.get(j));
-		}
-		
-		return GetSlopeFromLinearRegression.getRegressionSlope(dataToAdd);
+		BigDecimal latestValue = GetLocalData.getValue(datasetKey, attributeKey);
+		rs3.update(latestValue);
+		rs5.update(latestValue);
+		rs10.update(latestValue);
+		rs20.update(latestValue);
+		rs50.update(latestValue);
+		rs100.update(latestValue);
+		rs200.update(latestValue);
 	}
 	
 	@Override
 	public BigDecimal get3Period() {
-		return regression3;
+		return rs3.getLatestValue();
 	}
 
 	@Override
@@ -95,7 +76,7 @@ public class GetRegressionSlopes implements TechnicalIndicators {
 
 	@Override
 	public BigDecimal get20Period() {
-		return BigDecimal.ZERO;
+		return rs20.getLatestValue();
 	}
 
 	@Override
