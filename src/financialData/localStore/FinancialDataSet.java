@@ -6,34 +6,189 @@ import java.util.HashMap;
 
 import keys.RecordKeys;
 
-public class FinancialDataSet {
+/**
+ * Stores a complete FinancialDataSet. If the data-set was GBPUSD_HOUR, then this would store 
+ * all the attributes for that data-set.<br><br>
+ * 
+ * A complete financial record consists of:<br>
+ * <b>Raw Data</b> Date, time, open, high, low, close, volume.<br>
+ * <b>Indicators</b> Moving average, RSI, Stochastic Oscillators, previous highs, previous lows, 
+ * Regression.<br>
+ * <b> All the indicators come as 3,5,10,20,50,100,200 period indicators.</b><br><br>
+ * 
+ * Dates and times are stored separate to all other records, as these are stored as Strings whereas
+ * the records are stored as BigDecimals.<br><br>
+ * 
+ * This means there are 3 methods to extract data from this object:<br> 
+ * getRecord() - to get anything other than time and date<br>
+ * getDate(), getTime() - to get date and time<br><br>
+ * 
+ * @author James
+ * @version 1.0
+ * @since 27/07/2018
+ *
+ */
+public final class FinancialDataSet {
+	/** Stores all records other than date and time */
 	private HashMap < String, ArrayList<BigDecimal> > values;
-	private ArrayList <String> dates;
-	private ArrayList <String> times;
-	
+	/** Stores dates and times */
+	private ArrayList <String> dates, times;
+
+	/** On initialisation, object creates the HashMap and ArrayLists */
 	public FinancialDataSet() {
 		setup();
 	}
 
-	public BigDecimal getRecord( String recordKey, int location ) {
-		return values.get(recordKey).get(location);
+	/**
+	 * Returns the 'attribute' at 'location'<br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>attribute: </i> open<br>
+	 * <i>location: </i> 0<br>
+	 * Would return the open price of the first record stored.
+	 * @param attribute
+	 * @param location
+	 * @return price
+	 */
+	public BigDecimal getRecord( String attribute, int location ) {
+		return values.get(attribute).get(location);
 	}
+	
+	/**
+	 * Returns the date at 'location'<br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>location: </i> 0<br>
+	 * Would return the date of the first record stored.
+	 * 
+	 * @param attribute
+	 * @param location
+	 * @return price
+	 */
 	public String getDate( int location ) {
 		return dates.get(location);
 	}
+	
+	/**
+	 * Returns the time at 'location'<br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>location: </i> 0<br>
+	 * Would return the time of the first record stored.
+	 * 
+	 * @param attribute
+	 * @param location
+	 * @return price
+	 */
 	public String getTime( int location ) {
 		return times.get(location);
 	}
-	public BigDecimal[] getDate( String recordKey, int startlocation, int endLocation ) {
-		return null;
-	}
-	public BigDecimal[] getTime( String recordKey, int startlocation, int endLocation ) {
-		return null;
-	}
-	public BigDecimal[] getRecord( String recordKey, int startlocation, int endLocation) {
+	
+	/**
+	 * Returns the set of 'attribute' between 'startLocation' and 'endLocation'. <br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>attribute: </i> open<br>
+	 * <i>startLocation: </i> 0<br>
+	 * <i>endLocation: </i> 1000<br>
+	 * Would return all the open prices between the 1st and 1000th record.
+	 * 
+	 * @param attribute
+	 * @param startlocation
+	 * @param endLocation
+	 * @return The set of 'attribute' between 'startLocation' and 'endLocation'
+	 */
+	public BigDecimal[] getRecord( String attribute, int startlocation, int endLocation ) {
 		return null;
 	}
 	
+	/**
+	 * Returns the set of dates between 'startLocation' and 'endLocation'. <br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>startLocation: </i> 0<br>
+	 * <i>endLocation: </i> 1000<br>
+	 * Would return all the dates between the 1st and 1000th record.
+	 * 
+	 * @param startlocation
+	 * @param endLocation
+	 * @return The set of dates between 'startLocation' and 'endLocation'
+	 */
+	public BigDecimal[] getDate( int startlocation, int endLocation ) {
+		return null;
+	}
+	
+	/**
+	 * Returns the set of times between 'startLocation' and 'endLocation'. <br><br>
+	 * 
+	 * <b>Example:</b><br>
+	 * <i>startLocation: </i> 0<br>
+	 * <i>endLocation: </i> 1000<br>
+	 * Would return all the times between the 1st and 1000th record.
+	 * 
+	 * @param startlocation
+	 * @param endLocation
+	 * @return The set of times between 'startLocation' and 'endLocation'
+	 */
+	public BigDecimal[] getTime( int startlocation, int endLocation ) {
+		return null;
+	}
+	
+	
+	/**
+	 * Adds a new record to this financial data set. This is set to package only visibility. The 
+	 * reason being is this object will be sent to the end user, and update should be an internal 
+	 * operation. You update via GetFinancialDataSetFromLocalStore().
+	 * @param date
+	 * @param time
+	 * @param open
+	 * @param high
+	 * @param low
+	 * @param close
+	 * @param ma3
+	 * @param ma5
+	 * @param ma10
+	 * @param ma20
+	 * @param ma50
+	 * @param ma100
+	 * @param ma200
+	 * @param high3
+	 * @param high5
+	 * @param high10
+	 * @param high20
+	 * @param high50
+	 * @param high100
+	 * @param high200
+	 * @param low3
+	 * @param low5
+	 * @param low10
+	 * @param low20
+	 * @param low50
+	 * @param low100
+	 * @param low200
+	 * @param so3
+	 * @param so5
+	 * @param so10
+	 * @param so20
+	 * @param so50
+	 * @param so100
+	 * @param so200
+	 * @param rsi3
+	 * @param rsi5
+	 * @param rsi10
+	 * @param rsi20
+	 * @param rsi50
+	 * @param rsi100
+	 * @param rsi200
+	 * @param rs3
+	 * @param rs5
+	 * @param rs10
+	 * @param rs20
+	 * @param rs50
+	 * @param rs100
+	 * @param rs200
+	 * @param volume
+	 */
 	void addNewRecord( String date, String time, BigDecimal open, BigDecimal high, 
 					   BigDecimal low, BigDecimal close, 
 					   BigDecimal ma3, BigDecimal ma5, BigDecimal ma10, BigDecimal ma20, 
@@ -113,6 +268,7 @@ public class FinancialDataSet {
 		
 	}
 	
+	/** Sets up the HashMap and all the ArrayLists needed. */
 	private void setup() {
 		values = new HashMap < String, ArrayList<BigDecimal> > ();
 		dates = new ArrayList  <String> ();
@@ -171,9 +327,5 @@ public class FinancialDataSet {
 		values.put( RecordKeys.FIFTYREGRESSION,  new ArrayList <BigDecimal> () );
 		values.put( RecordKeys.ONEHUNREGRESSION,  new ArrayList <BigDecimal> () );
 		values.put( RecordKeys.TWOHUNREGRESSION,  new ArrayList <BigDecimal> () );
-		
-
 	}
-	
-	
 }
