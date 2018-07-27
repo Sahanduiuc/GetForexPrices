@@ -87,7 +87,7 @@ public class GetFinancialData {
 								String attribute, int startPeriod, int endPeriod) {
 		checkIfDatasetNeedsChanging(asset, timeFrame);
 		
-		return null;
+		return currentFinancialDataSet.getRecord(attribute, startPeriod, endPeriod);
 	}
 	
 	/**
@@ -189,10 +189,22 @@ public class GetFinancialData {
 	 * @param timeFrame
 	 * @return All dates held
 	 */
-	public static BigDecimal[] getAllDates(String asset, String timeFrame) {
+	public static String[] getAllDates(String asset, String timeFrame) {
 		checkIfDatasetNeedsChanging(asset, timeFrame);
 		
-		return null;
+		return currentFinancialDataSet.getAllDates();
+	}
+	
+	/**
+	 * Returns the size of the request set.
+	 * @param asset
+	 * @param timeFrame
+	 * @return
+	 */
+	public static int getSizeOfSet(String asset, String timeFrame) {
+		checkIfDatasetNeedsChanging(asset, timeFrame);
+		
+		return currentFinancialDataSet.sizeOfSet();
 	}
 	
 	/**

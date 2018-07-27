@@ -33,7 +33,9 @@ public final class FinancialDataSet {
 	private HashMap < String, ArrayList<BigDecimal> > values;
 	/** Stores dates and times */
 	private ArrayList <String> dates, times;
-
+	/** Stores size of set */
+	private int sizeOfSet = 0;
+	
 	/** On initialisation, object creates the HashMap and ArrayLists */
 	public FinancialDataSet() {
 		setup();
@@ -94,14 +96,21 @@ public final class FinancialDataSet {
 	 * Would return all the open prices between the 1st and 1000th record.
 	 * 
 	 * @param attribute
-	 * @param startlocation
+	 * @param startLocation
 	 * @param endLocation
 	 * @return The set of 'attribute' between 'startLocation' and 'endLocation'
 	 */
-	public BigDecimal[] getRecord( String attribute, int startlocation, int endLocation ) {
-		return null;
+	public BigDecimal[] getRecord( String attribute, int startLocation, int endLocation ) {
+		int sizeOfSet = endLocation - startLocation;
+		BigDecimal[] returnValues = new BigDecimal[sizeOfSet];
+		
+		for (int j = 0; j < sizeOfSet; j++) {
+			returnValues[j] = values.get(attribute).get(j);
+		}
+		
+		return returnValues;
 	}
-	
+
 	/**
 	 * Returns the set of dates between 'startLocation' and 'endLocation'. <br><br>
 	 * 
@@ -134,7 +143,21 @@ public final class FinancialDataSet {
 		return null;
 	}
 	
+	/**
+	 * Returns all dates stored in this set
+	 * @return
+	 */
+	public String[] getAllDates() {
+		return dates.toArray(new String[dates.size()]);
+	}
 	
+	/**
+	 * Returns the number of records held in this set
+	 * @return
+	 */
+	public int sizeOfSet() {
+		return sizeOfSet;
+	}
 	/**
 	 * Adds a new record to this financial data set. This is set to package only visibility. The 
 	 * reason being is this object will be sent to the end user, and update should be an internal 
@@ -266,6 +289,7 @@ public final class FinancialDataSet {
 		values.get(RecordKeys.ONEHUNREGRESSION).add(rs100);
 		values.get(RecordKeys.TWOHUNREGRESSION).add(rs200);
 		
+		sizeOfSet++;
 	}
 	
 	/** Sets up the HashMap and all the ArrayLists needed. */

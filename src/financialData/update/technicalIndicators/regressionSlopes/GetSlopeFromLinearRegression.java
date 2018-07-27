@@ -54,13 +54,13 @@ public class GetSlopeFromLinearRegression {
 		BigDecimal number = new BigDecimal("0.001");
 		BigDecimal additionNumber = number;
 	
-		for (int j = 0; j < yValueBigDecimal.length; j++) {
+		for (int j = 0, y = (yValueBigDecimal.length - 1); j < yValueBigDecimal.length; j++, y--) {
 			outputData[j][0] = number.doubleValue();
-			outputData[j][1] = yValueBigDecimal[j].doubleValue();
-			
+			outputData[y][1] = yValueBigDecimal[j].doubleValue();
+			System.out.print(yValueBigDecimal[y] + " ");
 			number = number.add(additionNumber);
 		}
-		
+		System.out.println("");
 		return outputData;
 	}
 
