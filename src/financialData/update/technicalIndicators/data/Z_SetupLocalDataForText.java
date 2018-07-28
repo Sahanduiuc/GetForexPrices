@@ -1,5 +1,10 @@
 package financialData.update.technicalIndicators.data;
 
+/**
+ * This class sets up data to store in LocalDataSet. This is used for testing the different technical indicators.
+ * @author James
+ *
+ */
 public final class Z_SetupLocalDataForText {
 	public static final String DATASET1 = "DATASET1";
 	

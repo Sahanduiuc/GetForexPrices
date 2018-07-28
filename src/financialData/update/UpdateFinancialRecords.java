@@ -8,7 +8,7 @@ import financialData.update.technicalIndicators.GetTechnicalIndicators;
 
 public final class UpdateFinancialRecords {
 	private static HashMap<String, GetTechnicalIndicators> getTechnicalIndicators = 
-			new HashMap<String, GetTechnicalIndicators>();
+					new HashMap<String, GetTechnicalIndicators>();
 	
 	public static void setup(String key, String[] open, String[] high, 
 									String[] low, String[] close) {
@@ -18,14 +18,16 @@ public final class UpdateFinancialRecords {
 		
 		getTechnicalIndicators.get(key).setup(key, open, high, low, close);
 	}
-	public static void update(String key, String date, String time, 
-			String open, String high, String low, String close, String volume) {
+	
+	public static void update(String key, String date, String time, String open, 
+							String high, String low, String close, String volume) {
 		update(key, date, time, new BigDecimal(open), new BigDecimal(high), 
 				new BigDecimal(low), new BigDecimal(close), new BigDecimal(volume));
 	}
 	
-	public static void update(String key, String date, String time, 
-			BigDecimal open, BigDecimal high, BigDecimal low, BigDecimal close, BigDecimal volume) {
+	public static void update(String key, String date, String time, BigDecimal open, 
+				BigDecimal high, BigDecimal low, BigDecimal close, BigDecimal volume) {
+	
 		if( getTechnicalIndicators.containsKey(key) ) {
 			GetTechnicalIndicators technicalIndicators = getTechnicalIndicators.get(key); 
 			
@@ -39,6 +41,7 @@ public final class UpdateFinancialRecords {
 					high, 
 					low, 
 					close,
+
 					technicalIndicators.getMovingAverages().get3Period(),
 					technicalIndicators.getMovingAverages().get5Period(),
 					technicalIndicators.getMovingAverages().get10Period(),
@@ -46,6 +49,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getMovingAverages().get50Period(),
 					technicalIndicators.getMovingAverages().get100Period(),
 					technicalIndicators.getMovingAverages().get200Period(),
+
 					technicalIndicators.getHighs().get3Period(),
 					technicalIndicators.getHighs().get5Period(),
 					technicalIndicators.getHighs().get10Period(),
@@ -53,6 +57,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getHighs().get50Period(),
 					technicalIndicators.getHighs().get100Period(),
 					technicalIndicators.getHighs().get200Period(),
+
 					technicalIndicators.getLows().get3Period(),
 					technicalIndicators.getLows().get5Period(),
 					technicalIndicators.getLows().get10Period(),
@@ -60,6 +65,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getLows().get50Period(),
 					technicalIndicators.getLows().get100Period(),
 					technicalIndicators.getLows().get200Period(),
+
 					technicalIndicators.getStochasticOscillators().get3Period(),
 					technicalIndicators.getStochasticOscillators().get5Period(),
 					technicalIndicators.getStochasticOscillators().get10Period(),
@@ -67,6 +73,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getStochasticOscillators().get50Period(),
 					technicalIndicators.getStochasticOscillators().get100Period(),
 					technicalIndicators.getStochasticOscillators().get200Period(),
+
 					technicalIndicators.getRSIs().get3Period(),
 					technicalIndicators.getRSIs().get5Period(),
 					technicalIndicators.getRSIs().get10Period(),
@@ -74,6 +81,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getRSIs().get50Period(),
 					technicalIndicators.getRSIs().get100Period(),
 					technicalIndicators.getRSIs().get200Period(),
+
 					technicalIndicators.getRegressionSlopes().get3Period(),
 					technicalIndicators.getRegressionSlopes().get5Period(),
 					technicalIndicators.getRegressionSlopes().get10Period(),
@@ -81,6 +89,7 @@ public final class UpdateFinancialRecords {
 					technicalIndicators.getRegressionSlopes().get50Period(),
 					technicalIndicators.getRegressionSlopes().get100Period(),
 					technicalIndicators.getRegressionSlopes().get200Period(),
+					
 					volume);
 		}
 		else {

@@ -16,6 +16,7 @@ public class GetStochasticOscillators implements TechnicalIndicators {
 		this.attributeKey = attributeKey;
 		update();
 	}
+	
 	@Override
 	public void update() {
 		BigDecimal currentClose = GetLocalData.getValue(datasetKey, attributeKey);

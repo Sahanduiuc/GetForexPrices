@@ -6,6 +6,10 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * This class tests GetLocalData fully
+ * @author James
+ */
 class Z_GetLocalData_Test {
 	private String dataset1 = Z_SetupLocalDataForText.DATASET1;
 	private String lowKey = keys.RecordKeys.LOW;

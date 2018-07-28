@@ -22,8 +22,7 @@ public class GetTechnicalIndicators {
 	
 	private boolean isSetup = false;
 	
-	public void setup(String key, String[] open, String[] high, 
-												String[] low,  String[] close) {
+	public void setup(String key, String[] open, String[] high, String[] low,  String[] close) {
 		for(int j = 0; j < open.length; j++) {
 			GetLocalData.update(key, open[j], high[j], low[j], close[j]);
 		}
@@ -35,7 +34,9 @@ public class GetTechnicalIndicators {
 		if(!isSetup) {
 			setup(key);
 		}
+		
 		else {
+			
 			movingAverages.update();
 			rsis.update();
 			highs.update();
@@ -43,7 +44,9 @@ public class GetTechnicalIndicators {
 			setDataForStochastic();
 			stochasticOscillators.update();
 			regression.update();
+			
 		}
+		
 	}
 	
 	private void setup(String key) {
@@ -51,9 +54,12 @@ public class GetTechnicalIndicators {
 		rsis.setup(key, keys.RecordKeys.OPEN);
 		highs.setup(key, keys.RecordKeys.OPEN);
 		lows.setup(key, keys.RecordKeys.OPEN);
+		regression.setup(key, RecordKeys.CLOSE);
+		
 		setDataForStochastic();
 		stochasticOscillators.setup(key, keys.RecordKeys.CLOSE);
-		regression.setup(key, RecordKeys.CLOSE);
+		
+		isSetup = true;
 	}
 	
 	private void setDataForStochastic() {
