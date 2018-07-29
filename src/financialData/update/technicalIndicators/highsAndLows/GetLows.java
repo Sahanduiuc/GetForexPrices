@@ -2,7 +2,7 @@ package financialData.update.technicalIndicators.highsAndLows;
 
 import java.math.BigDecimal;
 
-public class GetLows extends GetHighs {
+public final class GetLows extends GetHighs {
 	
 	@Override
 	protected boolean isNum1BiggerThanNum2(BigDecimal num1, BigDecimal num2) {
